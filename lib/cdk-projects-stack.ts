@@ -46,7 +46,7 @@ export class CdkProjectsStack extends cdk.Stack {
         managedNodeGroups: [
           {
             id: 'mng1',
-            instanceTypes: [ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.MICRO)],
+            instanceTypes: [ec2.InstanceType.of(ec2.InstanceClass.T3, ec2.InstanceSize.MEDIUM)],
             minSize: 1,
             maxSize: 5,
             desiredSize: 2,
@@ -97,7 +97,7 @@ export class CdkProjectsStack extends cdk.Stack {
         vpcSubnets: { subnetType: ec2.SubnetType.PRIVATE_WITH_EGRESS },
         securityGroup: instanceSg,
         role: instanceRole,
-        instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.MICRO),
+        instanceType: ec2.InstanceType.of(ec2.InstanceClass.T3, ec2.InstanceSize.MEDIUM),
         machineImage: ec2.MachineImage.latestAmazonLinux2023(),
       });
     }
